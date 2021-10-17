@@ -14,6 +14,7 @@ local function init( modApi )
 	-- SCRIPT_PATHS.qoala_grifter = scriptPath
 
 	include( scriptPath .. "/engine" )
+	include( scriptPath .. "/inventory" )
 end
 
 local function lateInit( modApi )
@@ -30,6 +31,8 @@ local function load( modApi, options, params )
 	local scriptPath = modApi:getScriptPath()
 
 	modApi:addAbilityDef( "qed_charged_shot", scriptPath .. "/abilities/qed_charged_shot" )
+	modApi:addAbilityDef( "qed_rook_overchargeCharge", scriptPath .. "/abilities/qed_rook_overchargeCharge" )
+	modApi:addAbilityDef( "qed_rook_overchargeUse", scriptPath .. "/abilities/qed_rook_overchargeUse" )
 
 	local mod_itemdefs = include( scriptPath .. "/itemdefs" )
 	for name, itemdef in pairs(mod_itemdefs) do

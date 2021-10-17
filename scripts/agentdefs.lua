@@ -92,7 +92,7 @@ return {
 		sounds = ROOK_SOUNDS,
 		speech = STRINGS.QED_GRIFTER.AGENTS.ROOK.BANTER,
 		blurb = STRINGS.QED_GRIFTER.AGENTS.ROOK.ALT_1.BIO,
-		upgrades = {"item_rook_pistols", "item_rook_coin"},
+		upgrades = {"augment_rook_overchargecells", "item_tazer", "item_rook_pistols"},
 	},
 
 	rook_a = {
@@ -129,7 +129,7 @@ return {
 		sounds = ROOK_SOUNDS,
 		speech = STRINGS.QED_GRIFTER.AGENTS.ROOK.BANTER,
 		blurb = STRINGS.QED_GRIFTER.AGENTS.ROOK.ALT_2.BIO,
-		upgrades = {"augment_rook_chargecells", "item_rook_pistols"},
+		upgrades = {"item_rook_pistols", "item_rook_coin"},
 	},
 
 	-- sal = {
