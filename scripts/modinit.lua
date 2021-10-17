@@ -1,3 +1,4 @@
+local serverdefs = include( "modules/serverdefs" )
 
 local function earlyInit( modApi )
 	modApi.requirements =
@@ -24,6 +25,11 @@ end
 
 local function load( modApi, options, params )
 	local scriptPath = modApi:getScriptPath()
+
+	local mod_agentdefs = include( scriptPath .. "/agentdefs" )
+	modApi:addAgentDef( "rook", mod_agentdefs.rook, { "rook", "rook_a" } )
+	modApi:addAgentDef( "rook_a", mod_agentdefs.rook_a )
+	-- modApi::addRescueAgent()
 end
 
 local function lateLoad( modApi, options, params )
@@ -34,7 +40,7 @@ local function initStrings( modApi )
 	local scriptPath = modApi:getScriptPath()
 
 	local MOD_STRINGS = include( scriptPath .. "/strings" )
-	modApi:addStrings( dataPath, "QED_GRIFTER", MOD_STRINGS)
+	modApi:addStrings( dataPath, "QED_GRIFTER", MOD_STRINGS )
 end
 
 return {
