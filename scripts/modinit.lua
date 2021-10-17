@@ -3,6 +3,7 @@ local serverdefs = include( "modules/serverdefs" )
 local function earlyInit( modApi )
 	modApi.requirements =
 	{
+		"Function Library",
 	}
 end
 
@@ -11,6 +12,8 @@ local function init( modApi )
 	-- Store script path for cross-file includes
 	-- rawset(_G,"SCRIPT_PATHS",rawget(_G,"SCRIPT_PATHS") or {})
 	-- SCRIPT_PATHS.qoala_grifter = scriptPath
+
+	include( scriptPath .. "/engine" )
 end
 
 local function lateInit( modApi )
@@ -25,6 +28,8 @@ end
 
 local function load( modApi, options, params )
 	local scriptPath = modApi:getScriptPath()
+
+	modApi:addAbilityDef( "qed_charged_shot", scriptPath .. "/abilities/qed_charged_shot" )
 
 	local mod_itemdefs = include( scriptPath .. "/itemdefs" )
 	for name, itemdef in pairs(mod_itemdefs) do

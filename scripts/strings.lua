@@ -36,6 +36,10 @@ return {
 		},
 	},
 
+	ABILITIES = {
+		CHARGED_SHOT = "Overchage Shot",
+	},
+
 	ITEMS = {
 		ROOK_PISTOLS = "EH1076 Pistols, Modified",
 		ROOK_PISTOLS_TOOLTIP = "Ranged targets. Lethal damage.",
