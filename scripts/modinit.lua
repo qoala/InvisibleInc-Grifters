@@ -26,6 +26,11 @@ end
 local function load( modApi, options, params )
 	local scriptPath = modApi:getScriptPath()
 
+	local mod_itemdefs = include( scriptPath .. "/itemdefs" )
+	for name, itemdef in pairs(mod_itemdefs) do
+		modApi:addItemDef( name, itemdef )
+	end
+
 	local mod_agentdefs = include( scriptPath .. "/agentdefs" )
 	modApi:addAgentDef( "rook", mod_agentdefs.rook, { "rook", "rook_a" } )
 	modApi:addAgentDef( "rook_a", mod_agentdefs.rook_a )

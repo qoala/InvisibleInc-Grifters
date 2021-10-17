@@ -60,7 +60,7 @@ local SAL_SOUNDS =
 return {
 	rook = {
 		type = "simunit",
-		agentID = 1,
+		agentID = "rook",
 		name = STRINGS.QED_GRIFTER.AGENTS.ROOK.NAME,
 		fullname = STRINGS.QED_GRIFTER.AGENTS.ROOK.ALT_1.FULLNAME,
 		codename = STRINGS.QED_GRIFTER.AGENTS.ROOK.ALT_1.FULLNAME,
@@ -92,12 +92,12 @@ return {
 		sounds = ROOK_SOUNDS,
 		speech = STRINGS.QED_GRIFTER.AGENTS.ROOK.BANTER,
 		blurb = STRINGS.QED_GRIFTER.AGENTS.ROOK.ALT_1.BIO,
-		upgrades = {"item_tazer"},
+		upgrades = {"item_rook_pistols", "item_rook_coin"},
 	},
 
 	rook_a = {
 		type = "simunit",
-		agentID = 1,
+		agentID = "rook",
 		name = STRINGS.QED_GRIFTER.AGENTS.ROOK.NAME,
 		fullname = STRINGS.QED_GRIFTER.AGENTS.ROOK.ALT_1.FULLNAME,
 		codename = STRINGS.QED_GRIFTER.AGENTS.ROOK.ALT_2.FULLNAME,
@@ -129,7 +129,7 @@ return {
 		sounds = ROOK_SOUNDS,
 		speech = STRINGS.QED_GRIFTER.AGENTS.ROOK.BANTER,
 		blurb = STRINGS.QED_GRIFTER.AGENTS.ROOK.ALT_2.BIO,
-		upgrades = {"item_tazer"},
+		upgrades = {"augment_rook_chargecells", "item_rook_pistols"},
 	},
 
 	-- sal = {
