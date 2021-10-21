@@ -28,7 +28,7 @@ return {
 			-- No more charged bonuses, just empty AP bonus
 			unit:getTraits().addArmorPiercingRanged = nil
 			userUnit:getTraits().rangedKO_bonus = userUnit:getTraits().rangedKO_bonus - 1
-			userUnit:getTraits().qed_charged_shot = false
+			userUnit:getTraits().qed_rook_chargedShot = false
 		end
 	end
 }

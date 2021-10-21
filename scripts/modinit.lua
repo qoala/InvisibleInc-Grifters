@@ -30,7 +30,7 @@ end
 local function load( modApi, options, params )
 	local scriptPath = modApi:getScriptPath()
 
-	modApi:addAbilityDef( "qed_charged_shot", scriptPath .. "/abilities/qed_charged_shot" )
+	modApi:addAbilityDef( "qed_rook_chargedShot", scriptPath .. "/abilities/qed_rook_chargedShot" )
 	modApi:addAbilityDef( "qed_rook_overchargeCharge", scriptPath .. "/abilities/qed_rook_overchargeCharge" )
 	modApi:addAbilityDef( "qed_rook_overchargeUse", scriptPath .. "/abilities/qed_rook_overchargeUse" )
 
