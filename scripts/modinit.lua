@@ -42,8 +42,9 @@ local function load( modApi, options, params )
 	end
 
 	local mod_agentdefs = include( scriptPath .. "/agentdefs" )
-	modApi:addAgentDef( "rook", mod_agentdefs.rook, { "rook", "rook_a" } )
-	modApi:addAgentDef( "rook_a", mod_agentdefs.rook_a )
+	-- modApi:addAgentDef( "rook", mod_agentdefs.rook, { "rook", "rook_a" } )
+	-- modApi:addAgentDef( "rook_a", mod_agentdefs.rook_a )
+	modApi:addAgentDef( "rook_a", mod_agentdefs.rook_a, { "rook_a" } )
 	-- modApi::addRescueAgent()
 end
 
