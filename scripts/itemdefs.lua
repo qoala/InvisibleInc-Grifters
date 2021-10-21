@@ -51,7 +51,7 @@ return {
 			cooldownMax = 3,
 			restrictedUse={{agentID="rook",name=STRINGS.QED_GRIFTER.AGENTS.ROOK.NAME}},
 		},
-		abilities = { "carryable" },
+		abilities = { "carryable", "qed_rook_coinAnte" },
 		value = 100,
 	},
 

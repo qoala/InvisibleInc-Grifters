@@ -15,6 +15,7 @@ local function init( modApi )
 
 	include( scriptPath .. "/engine" )
 	include( scriptPath .. "/inventory" )
+	include( scriptPath .. "/btree/senses" )
 end
 
 local function lateInit( modApi )
@@ -33,6 +34,7 @@ local function load( modApi, options, params )
 	modApi:addAbilityDef( "qed_rook_chargedShot", scriptPath .. "/abilities/qed_rook_chargedShot" )
 	modApi:addAbilityDef( "qed_rook_overchargeCharge", scriptPath .. "/abilities/qed_rook_overchargeCharge" )
 	modApi:addAbilityDef( "qed_rook_overchargeUse", scriptPath .. "/abilities/qed_rook_overchargeUse" )
+	modApi:addAbilityDef( "qed_rook_coinAnte", scriptPath .. "/abilities/qed_rook_coinAnte" )
 
 	local mod_itemdefs = include( scriptPath .. "/itemdefs" )
 	for name, itemdef in pairs(mod_itemdefs) do

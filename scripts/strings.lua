@@ -39,6 +39,7 @@ return {
 	ABILITIES = {
 		OVERCHARGE_USE = "Spend Overcharge",
 		CHARGED_SHOT = "Overcharge Shot",
+		COIN_ANTE = "Ante Coin",
 	},
 
 	ITEMS = {
@@ -47,8 +48,11 @@ return {
 		ROOK_PISTOLS_FLAVOR = "Modular ammunition chambers allow the use of unorthodox - and even illegal - rounds.",
 
 		ROOK_COIN = "Squad Coin",
-		ROOK_COIN_TOOLTIP = "Gain a buff for 2 turns.\nHeads: Guards do not notice Rook in peripheral vision.\nSnails: Guards that notice Rook expose additional credits (once each).",
+		ROOK_COIN_TOOLTIP = "Evoke: Gamble when stepping into guard noticed tiles.\nHEADS (50%): Guards ignore seeing Rook in noticed tiles this turn.\nSNAILS (50%): One guard noticing Rook offers additional credits. (Once per guard)",
 		ROOK_COIN_FLAVOR = "",
+		HEADS = "HEADS",
+		SNAILS = "SNAILS",
+		GRIFTED = "GRIFTED",
 
 		ROOK_OVERCHARGECELLS = "Overcharge Cells",
 		ROOK_OVERCHARGECELLS_TOOLTIP = "Consumes charges on item use, reducing cooldown by 1. Does not stack with similar augments.\nAgent's base AP is reduced by 1, but gains 0.5 for each charge below max.",
