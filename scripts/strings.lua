@@ -48,11 +48,11 @@ return {
 		ROOK_PISTOLS_FLAVOR = "Modular ammunition chambers allow the use of unorthodox - and even illegal - rounds.",
 
 		ROOK_COIN = "Squad Coin",
-		ROOK_COIN_TOOLTIP = "Evoke: Gamble when stepping into guard noticed tiles.\nHEADS (50%): Guards ignore seeing Rook in noticed tiles this turn.\nSNAILS (50%): One guard noticing Rook offers additional credits. (Once per guard)",
-		ROOK_COIN_FLAVOR = "",
+		ROOK_COIN_TOOLTIP = "Gamble when first stepping into guards' noticed tiles. Effects do not persist to the corp's turn.\nHEADS (50%): Guards ignore seeing Rook in noticed tiles this turn.\nSNAILS (50%): One guard noticing Rook can only notice tiles this turn.",
+		ROOK_COIN_FLAVOR = "Evoke: Rook is noticed.\nGamble.\nHeads: Gain Composure\nTails: Incept Doubt",
 		HEADS = "HEADS",
 		SNAILS = "SNAILS",
-		GRIFTED = "GRIFTED",
+		DOUBT = "DOUBT",
 
 		ROOK_OVERCHARGECELLS = "Overcharge Cells",
 		ROOK_OVERCHARGECELLS_TOOLTIP = "Consumes charges on item use, reducing cooldown by 1. Does not stack with similar augments.\nAgent's base AP is reduced by 1, but gains 0.5 for each charge below max.",

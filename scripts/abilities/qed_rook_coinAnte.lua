@@ -5,6 +5,7 @@ local simdefs = include("sim/simdefs")
 local simquery = include("sim/simquery")
 local abilityutil = include( "sim/abilities/abilityutil" )
 local inventory = include("sim/inventory")
+local modifiers = include("sim/modifiers")
 local serverdefs = include( "modules/serverdefs" )
 
 return {
@@ -43,6 +44,18 @@ return {
 			-- Reset
 			local userUnit = unit:getUnitOwner()
 			userUnit:getTraits().qed_peripheralIgnored = nil
+
+			local visionReset = false
+			for _,unit in pairs(sim:getAllUnits()) do
+				if unit:getModifiers():remove( "qed_grifterDoubt" ) then
+					sim:refreshUnitLOS( unit )
+					sim:dispatchEvent( simdefs.EV_UNIT_REFRESH, { unit = unit } )
+					visionReset = true
+				end
+			end
+			if visionReset then
+				sim:processReactions()
+			end
 		end
 	end,
 
@@ -51,7 +64,8 @@ return {
 
 		inventory.useItem( sim, userUnit, unit )
 
-		if (true) then
+		-- 50/50
+		if (sim:nextRand(2) > 1) then
 			userUnit:getTraits().qed_peripheralIgnored = true
 
 			sim:dispatchEvent( simdefs.EV_UNIT_FLOAT_TXT, {txt = STRINGS.QED_GRIFTER.ITEMS.HEADS, x = x0, y = y0,color={r=255/255,g=255/255,b=51/255,a=1}} )
@@ -59,8 +73,11 @@ return {
 			local target = sim:getUnit( targetID )
 			local x1, y1 = target:getLocation()
 
+			target:getModifiers():add( "LOSrange", "qed_grifterDoubt", modifiers.SET, 0.5 )
+			sim:refreshUnitLOS( target )
+
 			sim:dispatchEvent( simdefs.EV_UNIT_FLOAT_TXT, {txt = STRINGS.QED_GRIFTER.ITEMS.SNAILS, x = x0, y = y0,color={r=255/255,g=255/255,b=51/255,a=1}} )
-			sim:dispatchEvent( simdefs.EV_UNIT_FLOAT_TXT, {txt = STRINGS.QED_GRIFTER.ITEMS.GRIFTED, x = x1, y = y1,color={r=255/255,g=255/255,b=51/255,a=1}} )
+			sim:dispatchEvent( simdefs.EV_UNIT_FLOAT_TXT, {txt = STRINGS.QED_GRIFTER.ITEMS.DOUBT, x = x1, y = y1,color={r=255/255,g=255/255,b=51/255,a=1}} )
 		end
 	end,
 }
