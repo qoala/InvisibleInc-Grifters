@@ -13,7 +13,7 @@ return {
 		return self.name
 	end,
 	createTooltip = function( self )
-		return abilityutil.formatToolTip( STRINGS.ABILITIES.OVERWATCH_SHOOT, STRINGS.ABILITIES.OVERWATCH_SHOOT_DESC, 1 )
+		return abilityutil.formatToolTip( STRINGS.QED_GRIFTER.ABILITIES.OVERCHARGE_USE, "" )
 	end,
 
 	executeAbility = function( self, sim, unit, userUnit )
