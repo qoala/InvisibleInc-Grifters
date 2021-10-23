@@ -40,6 +40,9 @@ return {
 		OVERCHARGE_USE = "Spend Overcharge",
 		CHARGED_SHOT = "Overcharge Shot",
 		COIN_ANTE = "Ante Coin",
+		MARK_RICOCHET = "Mark Ricochet",
+		MARK_RICOCHET_TIP = "Mark %s",
+		ALREADY_MARKED = "Already Marked",
 	},
 
 	ITEMS = {
@@ -60,5 +63,8 @@ return {
 		ROOK_CHARGEDSHOT = "Overcharge Cells",
 		ROOK_CHARGEDSHOT_TOOLTIP = "Consumes charges on ranged lethal/KO attack for +1 armor piercing and +1 KO damage.\nAgent's base AP is reduced by 1, but gains 1 for each charge below max.",
 		ROOK_CHARGEDSHOT_FLAVOR = "These early charge cells overcharge a wide variety of weapons. Stray discharge has an adverse effect on muscle movement until spent.",
+		ROOK_RICOCHET = "Ricochet Shot",
+		ROOK_RICOCHET_TOOLTIP = "Mark a target, then the next ranged weapon attack this turn hits that target in addition to its intended target.\nRequires line of sight at time of firing.\nNo additional ammo cost.",
+		ROOK_RICOCHET_FLAVOR = "",
 	},
 }

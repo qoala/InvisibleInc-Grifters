@@ -34,6 +34,7 @@ local function load( modApi, options, params )
 	modApi:addAbilityDef( "qed_rook_chargedShot", scriptPath .. "/abilities/qed_rook_chargedShot" )
 	modApi:addAbilityDef( "qed_rook_overchargeCharge", scriptPath .. "/abilities/qed_rook_overchargeCharge" )
 	modApi:addAbilityDef( "qed_rook_overchargeUse", scriptPath .. "/abilities/qed_rook_overchargeUse" )
+	modApi:addAbilityDef( "qed_rook_markRicochet", scriptPath .. "/abilities/qed_rook_markRicochet" )
 	modApi:addAbilityDef( "qed_rook_coinAnte", scriptPath .. "/abilities/qed_rook_coinAnte" )
 
 	local mod_itemdefs = include( scriptPath .. "/itemdefs" )
@@ -42,9 +43,8 @@ local function load( modApi, options, params )
 	end
 
 	local mod_agentdefs = include( scriptPath .. "/agentdefs" )
-	-- modApi:addAgentDef( "rook", mod_agentdefs.rook, { "rook", "rook_a" } )
-	-- modApi:addAgentDef( "rook_a", mod_agentdefs.rook_a )
-	modApi:addAgentDef( "rook_a", mod_agentdefs.rook_a, { "rook_a" } )
+	modApi:addAgentDef( "rook", mod_agentdefs.rook, { "rook", "rook_a" } )
+	modApi:addAgentDef( "rook_a", mod_agentdefs.rook_a )
 	-- modApi::addRescueAgent()
 end
 

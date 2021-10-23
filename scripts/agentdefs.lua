@@ -86,13 +86,13 @@ return {
 		hireText = STRINGS.QED_GRIFTER.AGENTS.ROOK.RESCUED,
 		traits = util.extend( commondefs.DEFAULT_AGENT_TRAITS ) { mp=8, mpMax =8, },
 		skills = util.extend( commondefs.DEFAULT_AGENT_SKILLS ) {},
-		startingSkills = { anarchy = 2 },
+		startingSkills = { },
 		abilities = util.tconcat( {  "sprint",  }, commondefs.DEFAULT_AGENT_ABILITIES ),
 		children = {},
 		sounds = ROOK_SOUNDS,
 		speech = STRINGS.QED_GRIFTER.AGENTS.ROOK.BANTER,
 		blurb = STRINGS.QED_GRIFTER.AGENTS.ROOK.ALT_1.BIO,
-		upgrades = {"augment_rook_overchargecells", "item_tazer", "item_rook_pistols"},
+		upgrades = {"augment_rook_ricochet", "item_rook_pistols"},
 	},
 
 	rook_a = {

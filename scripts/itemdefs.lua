@@ -38,6 +38,17 @@ return {
 		profile_icon = "gui/icons/item_icons/items_icon_small/icon-item_generic_torso_small.png",
 		profile_icon_100 = "gui/icons/item_icons/icon-item_generic_torso.png",
 	},
+	augment_rook_ricochet = util.extend( commondefs.augment_template ) {
+		name = STRINGS.QED_GRIFTER.ITEMS.ROOK_RICOCHET,
+		desc = STRINGS.QED_GRIFTER.ITEMS.ROOK_RICOCHET_TOOLTIP,
+		flavor = STRINGS.QED_GRIFTER.ITEMS.ROOK_RICOCHET_FLAVOR,
+		traits = {
+			installed = true,
+			addAbilities = "qed_rook_markRicochet",
+		},
+		profile_icon = "gui/icons/item_icons/items_icon_small/icon-item_generic_torso_small.png",
+		profile_icon_100 = "gui/icons/item_icons/icon-item_generic_torso.png",
+	},
 
 	item_rook_coin = util.extend( commondefs.item_template ) {
 		name = STRINGS.QED_GRIFTER.ITEMS.ROOK_COIN,
