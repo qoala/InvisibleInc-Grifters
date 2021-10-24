@@ -52,8 +52,11 @@ return {
 		ROOK_PISTOLS_TOOLTIP = "Ranged targets. Can switch between KO and Lethal damage.",
 		ROOK_PISTOLS_FLAVOR = "Modular ammunition chambers allow the use of unorthodox - and even illegal - rounds.",
 		ROOK_PISTOLS_EMP = "EH1076 Pistols, Saboteur Loadout",
-		ROOK_PISTOLS_EMP_TOOLTIP = "Ranged targets. Can switch between KO and EMP damage.",
-		ROOK_PISTOLS_EMP_FLAVOR = "Modular ammunition chambers allow the use of unorthodox - and even illegal - rounds.",
+		ROOK_PISTOLS_EMP_TOOLTIP = "Ranged targets. EMP damage. Can also target mainframe devices.",
+		ROOK_PISTOLS_EMP_FLAVOR = "When bringing down a profusion of tech, loading up on rechargeable EMP bolts is the solution.",
+		ROOK_PISTOLS_EMPSWITCH = "EH1076 Pistols, Saboteur Loadout",
+		ROOK_PISTOLS_EMPSWITCH_TOOLTIP = "Ranged targets. Can switch between KO and EMP damage.",
+		ROOK_PISTOLS_EMPSWITCH_FLAVOR = "Modular ammunition chambers allow the use of unorthodox - and even illegal - rounds.",
 
 		ROOK_COIN = "Squad Coin",
 		ROOK_COIN_TOOLTIP = "Gamble when first stepping into guards' noticed tiles. Effects do not persist to the corp's turn.\nHEADS (50%): Guards ignore seeing Rook in noticed tiles this turn.\nSNAILS (50%): One guard noticing Rook can only notice tiles this turn.",

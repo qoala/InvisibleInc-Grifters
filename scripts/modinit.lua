@@ -36,6 +36,7 @@ local function load( modApi, options, params )
 	modApi:addAbilityDef( "qed_rook_markRicochet", scriptPath .. "/abilities/qed_rook_markRicochet" )
 	-- modApi:addAbilityDef( "qed_rook_overchargeCharge", scriptPath .. "/abilities/qed_rook_overchargeCharge" )
 	-- modApi:addAbilityDef( "qed_rook_overchargeUse", scriptPath .. "/abilities/qed_rook_overchargeUse" )
+	modApi:addAbilityDef( "qed_rook_shootDevice", scriptPath .. "/abilities/qed_rook_shootDevice" )
 
 	local mod_itemdefs = include( scriptPath .. "/itemdefs" )
 	for name, itemdef in pairs(mod_itemdefs) do
