@@ -62,12 +62,24 @@ return {
 	end,
 
 	canUseAbility = function( self, sim, ownerUnit, unit, targetUnitID )
-		local shootSingle = abilitydefs.lookupAbility("shootSingle")
+		-- simlog("QDEBUG canUse ownerUnit=%s unit=%s target=%s", ownerUnit:getID(), unit:getID(), targetUnitID or "nil")
+		local targetUnit = sim:getUnit( targetUnitID )
+		if not targetUnit then
+			-- Indicate whether or not the ability is usable before acquiring targets
+			return unit:getAP() >= 1
+		end
+
+		if not simquery.isShootable( unit, targetUnit) then
+			return false, STRINGS.UI.REASON.INVALID_TARGET
+		end
+		if not sim:canUnitSeeUnit( unit, targetUnit ) then
+			return false, STRINGS.UI.REASON.BLOCKED
+		end
 		if targetUnitID and unit:getTraits().qed_rook_ricochetTargetID == targetUnitID then
 			return false, STRINGS.QED_GRIFTER.ABILITIES.ALREADY_MARKED
 		end
 
-		return shootSingle.canUseAbility( self, sim, ownerUnit, unit, targetUnitID )
+		return true
 	end,
 
 	executeAbility = function( self, sim, abilityOwner, unit, targetUnitID )
