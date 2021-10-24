@@ -3,41 +3,41 @@ local commondefs = include( "sim/unitdefs/commondefs" )
 local simdefs = include("sim/simdefs")
 
 return {
-	augment_rook_overchargecells = util.extend( commondefs.augment_template ) {
-		name = STRINGS.QED_GRIFTER.ITEMS.ROOK_OVERCHARGECELLS,
-		desc = STRINGS.QED_GRIFTER.ITEMS.ROOK_OVERCHARGECELLS_TOOLTIP,
-		flavor = STRINGS.QED_GRIFTER.ITEMS.ROOK_OVERCHARGECELLS_FLAVOR,
-		traits = {
-			installed = true,
-			usesCharges = true,
-			charges = 2,
-			chargesMax = 3,
-			modTrait = {{"mpMax",-0.5}},
-			-- simunit:countAugments counts this as Torque Injectors
-			-- TODO: use a trait for this, otherwise can install Torque Injectors iff charges = 0
-			augment_torque_injectors = true,
-		},
-		abilities = util.tconcat( commondefs.augment_template.abilities, { "qed_rook_overchargeUse", "qed_rook_overchargeCharge" }),
-		profile_icon = "gui/icons/item_icons/items_icon_small/icon-item_generic_torso_small.png",
-		profile_icon_100 = "gui/icons/item_icons/icon-item_generic_torso.png",
-	},
-	augment_rook_chargedshot = util.extend( commondefs.augment_template ) {
-		name = STRINGS.QED_GRIFTER.ITEMS.ROOK_CHARGEDSHOT,
-		desc = STRINGS.QED_GRIFTER.ITEMS.ROOK_CHARGEDSHOT_TOOLTIP,
-		flavor = STRINGS.QED_GRIFTER.ITEMS.ROOK_CHARGEDSHOT_FLAVOR,
-		traits = {
-			installed = true,
-			usesCharges = true,
-			charges = 3,
-			chargesMax = 3,
-			addArmorPiercingRanged = 1,
-			addTrait = {{"qed_rook_chargedShot", true}},
-			modTrait = {{"rangedKO_bonus", 1}, {"mpMax",-1}},
-		},
-		abilities = util.tconcat( commondefs.augment_template.abilities, { "qed_rook_chargedShot" }),
-		profile_icon = "gui/icons/item_icons/items_icon_small/icon-item_generic_torso_small.png",
-		profile_icon_100 = "gui/icons/item_icons/icon-item_generic_torso.png",
-	},
+	-- augment_rook_overchargecells = util.extend( commondefs.augment_template ) {
+	-- 	name = STRINGS.QED_GRIFTER.ITEMS.ROOK_OVERCHARGECELLS,
+	-- 	desc = STRINGS.QED_GRIFTER.ITEMS.ROOK_OVERCHARGECELLS_TOOLTIP,
+	-- 	flavor = STRINGS.QED_GRIFTER.ITEMS.ROOK_OVERCHARGECELLS_FLAVOR,
+	-- 	traits = {
+	-- 		installed = true,
+	-- 		usesCharges = true,
+	-- 		charges = 2,
+	-- 		chargesMax = 3,
+	-- 		modTrait = {{"mpMax",-0.5}},
+	-- 		-- simunit:countAugments counts this as Torque Injectors
+	-- 		-- TODO: use a trait for this, otherwise can install Torque Injectors iff charges = 0
+	-- 		augment_torque_injectors = true,
+	-- 	},
+	-- 	abilities = util.tconcat( commondefs.augment_template.abilities, { "qed_rook_overchargeUse", "qed_rook_overchargeCharge" }),
+	-- 	profile_icon = "gui/icons/item_icons/items_icon_small/icon-item_generic_torso_small.png",
+	-- 	profile_icon_100 = "gui/icons/item_icons/icon-item_generic_torso.png",
+	-- },
+	-- augment_rook_chargedshot = util.extend( commondefs.augment_template ) {
+	-- 	name = STRINGS.QED_GRIFTER.ITEMS.ROOK_CHARGEDSHOT,
+	-- 	desc = STRINGS.QED_GRIFTER.ITEMS.ROOK_CHARGEDSHOT_TOOLTIP,
+	-- 	flavor = STRINGS.QED_GRIFTER.ITEMS.ROOK_CHARGEDSHOT_FLAVOR,
+	-- 	traits = {
+	-- 		installed = true,
+	-- 		usesCharges = true,
+	-- 		charges = 3,
+	-- 		chargesMax = 3,
+	-- 		addArmorPiercingRanged = 1,
+	-- 		addTrait = {{"qed_rook_chargedShot", true}},
+	-- 		modTrait = {{"rangedKO_bonus", 1}, {"mpMax",-1}},
+	-- 	},
+	-- 	abilities = util.tconcat( commondefs.augment_template.abilities, { "qed_rook_chargedShot" }),
+	-- 	profile_icon = "gui/icons/item_icons/items_icon_small/icon-item_generic_torso_small.png",
+	-- 	profile_icon_100 = "gui/icons/item_icons/icon-item_generic_torso.png",
+	-- },
 	augment_rook_ricochet = util.extend( commondefs.augment_template ) {
 		name = STRINGS.QED_GRIFTER.ITEMS.ROOK_RICOCHET,
 		desc = STRINGS.QED_GRIFTER.ITEMS.ROOK_RICOCHET_TOOLTIP,
