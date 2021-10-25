@@ -8,6 +8,15 @@ local abilityutil = include( "sim/abilities/abilityutil" )
 local inventory = include("sim/inventory")
 local serverdefs = include( "modules/serverdefs" )
 
+function canShoot( sim, unit, targetUnit, weaponUnit )
+	if not (simquery.isShootable( unit, targetUnit ) or (weaponUnit:getTraits().qed_canShootDevices and simquery.qed_isShootableDevice( unit, targetUnit ))) then
+		return false, STRINGS.UI.REASON.INVALID_TARGET
+	end
+	if not sim:canUnitSeeUnit( unit, targetUnit ) then
+		return false, STRINGS.UI.REASON.BLOCKED
+	end
+	return true
+end
 
 return {
 	name = STRINGS.QED_GRIFTER.ABILITIES.MARK_RICOCHET,
@@ -54,7 +63,7 @@ return {
 		local existingID = unit:getTraits().qed_rook_ricochetTargetID
 		local units = {}
 		for _, targetUnit in pairs(sim:getAllUnits()) do
-			if existingID == targetUnit:getID() or (simquery.isShootable( userUnit, targetUnit) and sim:canUnitSeeUnit( userUnit, targetUnit )) then
+			if existingID == targetUnit:getID() or canShoot( sim, userUnit, targetUnit, weaponUnit ) then
 				table.insert( units, targetUnit )
 			end
 		end
@@ -68,12 +77,18 @@ return {
 			-- Indicate whether or not the ability is usable before acquiring targets
 			return unit:getAP() >= 1
 		end
-
-		if not simquery.isShootable( unit, targetUnit) then
-			return false, STRINGS.UI.REASON.INVALID_TARGET
+		local weaponUnit = simquery.getEquippedGun( unit )
+		if not weaponUnit then
+			if unit:getTraits().qed_rook_ricochetTargetID == targetUnitID then
+				return false, STRINGS.UI.REASON.NO_GUN
+			else
+				return false
+			end
 		end
-		if not sim:canUnitSeeUnit( unit, targetUnit ) then
-			return false, STRINGS.UI.REASON.BLOCKED
+
+		local ok, reason = canShoot( sim, unit, targetUnit, weaponUnit )
+		if not ok then
+			return false, reason
 		end
 		if targetUnitID and unit:getTraits().qed_rook_ricochetTargetID == targetUnitID then
 			return false, STRINGS.QED_GRIFTER.ABILITIES.ALREADY_MARKED

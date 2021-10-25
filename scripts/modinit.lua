@@ -14,7 +14,8 @@ local function init( modApi )
 	-- SCRIPT_PATHS.qoala_grifter = scriptPath
 
 	include( scriptPath .. "/engine" )
-	include( scriptPath .. "/inventory" )
+	-- include( scriptPath .. "/inventory" )
+	include( scriptPath .. "/simquery" )
 	include( scriptPath .. "/btree/senses" )
 end
 

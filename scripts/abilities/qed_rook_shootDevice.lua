@@ -10,25 +10,11 @@ local serverdefs = include( "modules/serverdefs" )
 
 local shootSingle = abilitydefs.lookupAbility("shootSingle")
 
-local function isShootableDevice( targetUnit )
-	if targetUnit:getTraits().canBeShot then
-		-- shootSingle handles viability of this target
-		return false
-	end
-	if not targetUnit:getTraits().mainframe_ice or targetUnit:getTraits().mainframe_status == "off" then
-		return false
-	end
-	if targetUnit:isPC() then
-		return false
-	end
-	return true
-end
-
 return util.extend(shootSingle) {
 	acquireTargets = function( self, targets, game, sim, unit, userUnit )
 		local units = {}
 		for _, targetUnit in pairs(sim:getAllUnits()) do
-			if isShootableDevice( targetUnit ) and sim:canUnitSeeUnit( userUnit, targetUnit ) then
+			if simquery.qed_isShootableDevice( userUnit, targetUnit ) and sim:canUnitSeeUnit( userUnit, targetUnit ) then
 				table.insert( units, targetUnit )
 			end
 		end
@@ -57,7 +43,7 @@ return util.extend(shootSingle) {
 			return true
 		end
 
-		if not isShootableDevice( targetUnit ) then
+		if not simquery.qed_isShootableDevice( unit, targetUnit ) then
 			return false
 		end
 		if not sim:canUnitSeeUnit( unit, targetUnit ) then
