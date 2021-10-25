@@ -49,9 +49,6 @@ return util.extend(shootSingle) {
 		if not sim:canUnitSeeUnit( unit, targetUnit ) then
 			return false, STRINGS.UI.REASON.BLOCKED
 		end
-		if targetUnitID and unit:getTraits().qed_grift_ricochetTargetID == targetUnitID then
-			return false, STRINGS.QED_GRIFTER.ABILITIES.ALREADY_MARKED
-		end
 
 		return true
 	end,
