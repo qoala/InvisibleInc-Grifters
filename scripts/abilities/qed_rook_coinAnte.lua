@@ -24,7 +24,23 @@ return {
 	end,
 	onDespawnAbility = function( self, sim, unit )
 		sim:removeTrigger( simdefs.TRG_START_TURN, self )
-		self.abilityOwner = nil
+
+		if self.userUnit then
+			self.userUnit:getTraits().qed_peripheralIgnored = nil
+			self.userUnit = nil
+		end
+
+		local visionReset = false
+		for _,unit in pairs(sim:getAllUnits()) do
+			if unit:getModifiers():remove( "qed_grifterDoubt" ) then
+				sim:refreshUnitLOS( unit )
+				sim:dispatchEvent( simdefs.EV_UNIT_REFRESH, { unit = unit } )
+				visionReset = true
+			end
+		end
+		if visionReset then
+			sim:processReactions()
+		end
 	end,
 
 	canUseAbility = function( self, sim, unit )
@@ -42,8 +58,9 @@ return {
 	onTrigger = function( self, sim, evType, evData, unit )
 		if evType == simdefs.TRG_START_TURN then
 			-- Reset
-			local userUnit = unit:getUnitOwner()
-			userUnit:getTraits().qed_peripheralIgnored = nil
+			if self.userUnit then
+				self.userUnit:getTraits().qed_peripheralIgnored = nil
+			end
 
 			local visionReset = false
 			for _,unit in pairs(sim:getAllUnits()) do
@@ -67,6 +84,7 @@ return {
 		-- 50/50
 		if (sim:nextRand(2) > 1) then
 			userUnit:getTraits().qed_peripheralIgnored = true
+			self.userUnit = userUnit
 
 			sim:dispatchEvent( simdefs.EV_UNIT_FLOAT_TXT, {txt = STRINGS.QED_GRIFTER.ITEMS.HEADS, x = x0, y = y0,color={r=255/255,g=255/255,b=51/255,a=1}} )
 		else
