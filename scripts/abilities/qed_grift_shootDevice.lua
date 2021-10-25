@@ -26,7 +26,11 @@ return util.extend(shootSingle) {
 		local targetUnit = sim:getUnit( targetUnitID )
 		if not targetUnit then
 			-- Indicate whether or not the ability is usable before acquiring targets
-			local weaponUnit = ownerUnit
+			local weaponUnit = simquery.getEquippedGun( unit )
+			if not weaponUnit:getTraits().qed_canShootDevices then
+				return false
+			end
+
 			local ok, reason = abilityutil.canConsumeAmmo( sim, weaponUnit )
 			if not ok then
 				return false
