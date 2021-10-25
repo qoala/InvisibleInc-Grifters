@@ -86,7 +86,7 @@ return {
 		hireText = STRINGS.QED_GRIFTER.AGENTS.ROOK.RESCUED,
 		traits = util.extend( commondefs.DEFAULT_AGENT_TRAITS ) { mp=8, mpMax =8, },
 		skills = util.extend( commondefs.DEFAULT_AGENT_SKILLS ) {},
-		startingSkills = { anarchy = 2 },
+		startingSkills = {},
 		abilities = util.tconcat( {  "sprint",  }, commondefs.DEFAULT_AGENT_ABILITIES ),
 		children = {},
 		sounds = ROOK_SOUNDS,
