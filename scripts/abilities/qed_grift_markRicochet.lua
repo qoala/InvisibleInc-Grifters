@@ -43,13 +43,13 @@ return {
 	end,
 	onDespawnAbility = function( self, sim, unit )
 		sim:removeTrigger( simdefs.TRG_START_TURN, self )
-		unit:getTraits().qed_rook_ricochetTargetID = nil
+		unit:getTraits().qed_grift_ricochetTargetID = nil
 	end,
 
 	onTrigger = function( self, sim, evType, evData, unit )
 		if evType == simdefs.TRG_START_TURN then
 			-- Reset
-			unit:getTraits().qed_rook_ricochetTargetID = nil
+			unit:getTraits().qed_grift_ricochetTargetID = nil
 		end
 	end,
 
@@ -60,7 +60,7 @@ return {
 		end
 		-- simlog("QDEBUG acquireTargets unit=%s userUnit=%s equip=%s", unit:getID(), userUnit:getID(), weaponUnit:getID())
 
-		local existingID = unit:getTraits().qed_rook_ricochetTargetID
+		local existingID = unit:getTraits().qed_grift_ricochetTargetID
 		local units = {}
 		for _, targetUnit in pairs(sim:getAllUnits()) do
 			if existingID == targetUnit:getID() or canShoot( sim, userUnit, targetUnit, weaponUnit ) then
@@ -79,7 +79,7 @@ return {
 		end
 		local weaponUnit = simquery.getEquippedGun( unit )
 		if not weaponUnit then
-			if unit:getTraits().qed_rook_ricochetTargetID == targetUnitID then
+			if unit:getTraits().qed_grift_ricochetTargetID == targetUnitID then
 				return false, STRINGS.UI.REASON.NO_GUN
 			else
 				return false
@@ -90,7 +90,7 @@ return {
 		if not ok then
 			return false, reason
 		end
-		if targetUnitID and unit:getTraits().qed_rook_ricochetTargetID == targetUnitID then
+		if targetUnitID and unit:getTraits().qed_grift_ricochetTargetID == targetUnitID then
 			return false, STRINGS.QED_GRIFTER.ABILITIES.ALREADY_MARKED
 		end
 
@@ -98,7 +98,7 @@ return {
 	end,
 
 	executeAbility = function( self, sim, abilityOwner, unit, targetUnitID )
-		unit:getTraits().qed_rook_ricochetTargetID = targetUnitID
+		unit:getTraits().qed_grift_ricochetTargetID = targetUnitID
 
 		local x0, y0 = unit:getLocation()
 		sim:dispatchEvent( simdefs.EV_PLAY_SOUND, {sound="SpySociety/Actions/overwatch_tazer", x=x0,y=y0} )

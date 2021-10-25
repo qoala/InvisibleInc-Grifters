@@ -31,9 +31,9 @@ end
 local function load( modApi, options, params )
 	local scriptPath = modApi:getScriptPath()
 
-	modApi:addAbilityDef( "qed_rook_coinAnte", scriptPath .. "/abilities/qed_rook_coinAnte" )
-	modApi:addAbilityDef( "qed_rook_markRicochet", scriptPath .. "/abilities/qed_rook_markRicochet" )
-	modApi:addAbilityDef( "qed_rook_shootDevice", scriptPath .. "/abilities/qed_rook_shootDevice" )
+	modApi:addAbilityDef( "qed_grift_coinAnte", scriptPath .. "/abilities/qed_grift_coinAnte" )
+	modApi:addAbilityDef( "qed_grift_markRicochet", scriptPath .. "/abilities/qed_grift_markRicochet" )
+	modApi:addAbilityDef( "qed_grift_shootDevice", scriptPath .. "/abilities/qed_grift_shootDevice" )
 
 	local mod_itemdefs = include( scriptPath .. "/itemdefs" )
 	for name, itemdef in pairs(mod_itemdefs) do

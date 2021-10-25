@@ -6,9 +6,9 @@ local oldTryShootAt = simengine.tryShootAt
 function simengine:tryShootAt( sourceUnit, targetUnit, dmgt0, equipped, ... )
 	local ret = oldTryShootAt( self, sourceUnit, targetUnit, dmgt0, equipped, ... )
 
-	local ricochetTargetID = sourceUnit:getTraits().qed_rook_ricochetTargetID
+	local ricochetTargetID = sourceUnit:getTraits().qed_grift_ricochetTargetID
 	if ricochetTargetID then
-		sourceUnit:getTraits().qed_rook_ricochetTargetID = nil
+		sourceUnit:getTraits().qed_grift_ricochetTargetID = nil
 		local ricochetTarget = self:getUnit(ricochetTargetID)
 		if ricochetTarget and (ricochetTarget ~= targetUnit) and self:canUnitSeeUnit( sourceUnit, ricochetTarget )
 				and (ricochetTarget:getTraits().canBeShot or (equipped:getTraits().qed_canShootDevices and simquery.qed_isShootableDevice(sourceUnit, ricochetTarget))) then

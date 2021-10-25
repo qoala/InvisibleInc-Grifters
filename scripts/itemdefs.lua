@@ -9,7 +9,7 @@ return {
 		flavor = STRINGS.QED_GRIFTER.ITEMS.ROOK_RICOCHET_FLAVOR,
 		traits = {
 			installed = true,
-			addAbilities = "qed_rook_markRicochet",
+			addAbilities = "qed_grift_markRicochet",
 		},
 		profile_icon = "gui/icons/skills_icons/skills_icon_small/icon-item_augment_shalem_small.png",
 		profile_icon_100 = "gui/icons/skills_icons/icon-item_augment_shalem.png",
@@ -27,7 +27,7 @@ return {
 			cooldownMax = 3,
 			restrictedUse={{agentID="rook",name=STRINGS.QED_GRIFTER.AGENTS.ROOK.NAME}},
 		},
-		abilities = { "carryable", "qed_rook_coinAnte" },
+		abilities = { "carryable", "qed_grift_coinAnte" },
 		value = 100,
 	},
 
@@ -71,7 +71,7 @@ return {
 			modeEmpdamage = 2,
 			armorPiercing = 1,
 		},
-		abilities = util.tconcat( commondefs.weapon_reloadable_template.abilities, { "qed_rook_shootDevice" }),
+		abilities = util.tconcat( commondefs.weapon_reloadable_template.abilities, { "qed_grift_shootDevice" }),
 		icon = "itemrigs/FloorProp_Pistol.png",
 		profile_icon = "gui/icons/item_icons/items_icon_small/icon-item_gun_pistol_small.png",
 		profile_icon_100 = "gui/icons/item_icons/icon-item_gun_pistol.png",
