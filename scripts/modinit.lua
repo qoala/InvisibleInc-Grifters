@@ -14,7 +14,6 @@ local function init( modApi )
 	-- SCRIPT_PATHS.qoala_grifter = scriptPath
 
 	include( scriptPath .. "/engine" )
-	-- include( scriptPath .. "/inventory" )
 	include( scriptPath .. "/simquery" )
 	include( scriptPath .. "/btree/senses" )
 end
@@ -32,11 +31,8 @@ end
 local function load( modApi, options, params )
 	local scriptPath = modApi:getScriptPath()
 
-	-- modApi:addAbilityDef( "qed_rook_chargedShot", scriptPath .. "/abilities/qed_rook_chargedShot" )
 	modApi:addAbilityDef( "qed_rook_coinAnte", scriptPath .. "/abilities/qed_rook_coinAnte" )
 	modApi:addAbilityDef( "qed_rook_markRicochet", scriptPath .. "/abilities/qed_rook_markRicochet" )
-	-- modApi:addAbilityDef( "qed_rook_overchargeCharge", scriptPath .. "/abilities/qed_rook_overchargeCharge" )
-	-- modApi:addAbilityDef( "qed_rook_overchargeUse", scriptPath .. "/abilities/qed_rook_overchargeUse" )
 	modApi:addAbilityDef( "qed_rook_shootDevice", scriptPath .. "/abilities/qed_rook_shootDevice" )
 
 	local mod_itemdefs = include( scriptPath .. "/itemdefs" )
