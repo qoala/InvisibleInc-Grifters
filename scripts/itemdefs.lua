@@ -45,7 +45,7 @@ return {
 			modeLdamage = 1,
 			mode = "KO",
 		},
-		abilities = util.tconcat( commondefs.weapon_reloadable_template.abilities, { "W93_switchWeaponMode" }),
+		abilities = util.tconcat( commondefs.weapon_reloadable_template.abilities, { "qed_grift_switchWeaponMode" }),
 		icon = "itemrigs/FloorProp_Pistol.png",
 		profile_icon = "gui/icons/item_icons/items_icon_small/icon-item_gun_pistol_small.png",
 		profile_icon_100 = "gui/icons/item_icons/icon-item_gun_pistol.png",

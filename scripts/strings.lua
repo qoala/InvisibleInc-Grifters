@@ -40,9 +40,16 @@ return {
 
 	ABILITIES = {
 		COIN_ANTE = "Ante Coin",
+
 		MARK_RICOCHET = "Mark Ricochet",
 		MARK_RICOCHET_TIP = "Mark %s",
 		ALREADY_MARKED = "Already Marked",
+
+		SWITCH_WEAPON_MODE = "SWITCH FIRING MODE",
+		SWITCH_WEAPON_MODE_DESC = "Switch between firing modes. Current: {1}",
+		SWITCH_WEAPON_MODE_KO = "WEAPON MODE: KO",
+		SWITCH_WEAPON_MODE_L = "WEAPON MODE: LETHAL",
+		SWITCH_WEAPON_MODE_EMP = "WEAPON MODE: EMP",
 	},
 
 	ITEMS = {
