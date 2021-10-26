@@ -27,7 +27,7 @@ return util.extend(shootSingle) {
 		if not targetUnit then
 			-- Indicate whether or not the ability is usable before acquiring targets
 			local weaponUnit = simquery.getEquippedGun( unit )
-			if not weaponUnit:getTraits().qed_canShootDevices then
+			if not weaponUnit or not weaponUnit:getTraits().qed_canShootDevices then
 				return false
 			end
 
