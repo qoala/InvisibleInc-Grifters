@@ -56,7 +56,7 @@ return {
 		value = 700,
 	},
 
-	item_rook_pistols_emp = util.extend( commondefs.weapon_reloadable_template ) {
+	item_rook_pistols_emp = util.extend( commondefs.weapon_template ) {
 		name = STRINGS.QED_GRIFTER.ITEMS.ROOK_PISTOLS_EMP,
 		desc = STRINGS.QED_GRIFTER.ITEMS.ROOK_PISTOLS_EMP_TOOLTIP,
 		flavor = STRINGS.QED_GRIFTER.ITEMS.ROOK_PISTOLS_EMP_FLAVOR,
@@ -71,7 +71,7 @@ return {
 			modeEmpdamage = 2,
 			armorPiercing = 1,
 		},
-		abilities = util.tconcat( commondefs.weapon_reloadable_template.abilities, { "qed_grift_shootDevice" }),
+		abilities = util.tconcat( commondefs.weapon_template.abilities, { "recharge", "qed_grift_shootDevice" }),
 		icon = "itemrigs/FloorProp_Pistol.png",
 		profile_icon = "gui/icons/item_icons/items_icon_small/icon-item_gun_pistol_small.png",
 		profile_icon_100 = "gui/icons/item_icons/icon-item_gun_pistol.png",
