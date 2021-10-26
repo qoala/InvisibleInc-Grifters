@@ -55,7 +55,7 @@ return {
 	ITEMS = {
 		ROOK_PISTOLS = "EH1076 Pistols, Modified",
 		ROOK_PISTOLS_TOOLTIP = "Ranged targets. Can switch between KO and Lethal damage.",
-		ROOK_PISTOLS_FLAVOR = "Modular ammunition chambers allow the use of unorthodox - and even illegal - rounds.",
+		ROOK_PISTOLS_FLAVOR = "Modular ammunition chambers allow the use of unorthodox - and even illegal - rounds. For the agency, incendiary rounds have been replaced with tranquilizers.",
 		ROOK_PISTOLS_EMP = "EH1076 Pistols, Saboteur Loadout",
 		ROOK_PISTOLS_EMP_TOOLTIP = "Ranged targets. EMP damage. Can also target mainframe devices.",
 		ROOK_PISTOLS_EMP_FLAVOR = "When bringing down a profusion of tech, loading up on rechargeable EMP bolts is the solution.",
