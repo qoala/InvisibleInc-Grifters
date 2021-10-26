@@ -73,18 +73,28 @@ return {
 	canUseAbility = function( self, sim, ownerUnit, unit, targetUnitID )
 		-- simlog("QDEBUG canUse ownerUnit=%s unit=%s target=%s", ownerUnit:getID(), unit:getID(), targetUnitID or "nil")
 		local targetUnit = sim:getUnit( targetUnitID )
+		local weaponUnit = simquery.getEquippedGun( unit )
 		if not targetUnit then
 			-- Indicate whether or not the ability is usable before acquiring targets
-			return unit:getAP() >= 1
-		end
-		local weaponUnit = simquery.getEquippedGun( unit )
-		if not weaponUnit then
-			if unit:getTraits().qed_grift_ricochetTargetID == targetUnitID then
+			if not weaponUnit then
 				return false, STRINGS.UI.REASON.NO_GUN
-			else
-				return false
 			end
+			if not weaponUnit then
+				return false, STRINGS.UI.REASON.NO_GUN
+			end
+			local ok, reason = abilityutil.canConsumeAmmo( sim, weaponUnit )
+			if not ok then
+				return false, reason
+			end
+			if weaponUnit:getTraits().usesCharges and weaponUnit:getTraits().charges < 1 then
+				return false, STRINGS.UI.REASON.CHARGE
+			end
+			if unit:getAP() < 1 then
+				return false, STRINGS.UI.REASON.ATTACK_USED
+			end
+			return true
 		end
+
 
 		local ok, reason = canShoot( sim, unit, targetUnit, weaponUnit )
 		if not ok then
