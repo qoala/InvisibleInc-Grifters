@@ -1,5 +1,3 @@
-local serverdefs = include( "modules/serverdefs" )
-
 local function earlyInit( modApi )
 	modApi.requirements =
 	{
