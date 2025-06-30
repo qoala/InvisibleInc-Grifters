@@ -45,6 +45,15 @@ return {
 		MARK_RICOCHET_TIP = "Mark %s",
 		ALREADY_MARKED = "Already Marked",
 
+		RICOCHET_AIM = "Begin Ricochet Aiming",
+		RICOCHET_AIM_TIP = "Initiate aiming sequence for ricochet.",
+		RICOCHET_AIM_AT = "Ricochet #{1}: {2}",
+		RICOCHET_AIM_AT_TIP = "Add {1} to the current ricochet shot.",
+		ALREADY_RICOCHET_AIMED = "Already Targeted (#{1})",
+		RICOCHET_SHOOT = "Shoot Ricochet",
+		RICOCHET_SHOOT_AT = "Shoot Ricochet at {1}",
+		RICOCHET_SHOOT_AT_TIP = "Fire the EH1076 Pistols at {1}",
+
 		SWITCH_WEAPON_MODE = "SWITCH FIRING MODE",
 		SWITCH_WEAPON_MODE_DESC = "Switch between firing modes. Current: {1}",
 		SWITCH_WEAPON_MODE_KO = "WEAPON MODE: KO",

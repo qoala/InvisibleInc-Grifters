@@ -129,7 +129,8 @@ return {
 		sounds = ROOK_SOUNDS,
 		speech = STRINGS.QED_GRIFTER.AGENTS.ROOK.BANTER,
 		blurb = STRINGS.QED_GRIFTER.AGENTS.ROOK.ALT_2.BIO,
-		upgrades = {"augment_rook_ricochet", "item_tazer", "item_rook_pistols_emp"},
+		-- upgrades = {"augment_rook_ricochet", "item_tazer", "item_rook_pistols_emp"},
+		upgrades = {"item_tazer", "item_rook_pistols_emp"},
 	},
 
 	-- sal = {

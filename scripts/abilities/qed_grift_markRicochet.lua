@@ -79,9 +79,6 @@ return {
 			if not weaponUnit then
 				return false, STRINGS.UI.REASON.NO_GUN
 			end
-			if not weaponUnit then
-				return false, STRINGS.UI.REASON.NO_GUN
-			end
 			local ok, reason = abilityutil.canConsumeAmmo( sim, weaponUnit )
 			if not ok then
 				return false, reason

@@ -14,6 +14,7 @@ local function init( modApi )
 	include( scriptPath .. "/engine" )
 	include( scriptPath .. "/simquery" )
 	include( scriptPath .. "/btree/senses" )
+	include( scriptPath .. "/abilities/shootSingle" )
 end
 
 local function lateInit( modApi )
@@ -31,6 +32,8 @@ local function load( modApi, options, params )
 
 	modApi:addAbilityDef( "qed_grift_coinAnte", scriptPath .. "/abilities/qed_grift_coinAnte" )
 	modApi:addAbilityDef( "qed_grift_markRicochet", scriptPath .. "/abilities/qed_grift_markRicochet" )
+	modApi:addAbilityDef( "qed_grift_ricochetAim", scriptPath .. "/abilities/qed_grift_ricochetAim" )
+	modApi:addAbilityDef( "qed_grift_ricochetShoot", scriptPath .. "/abilities/qed_grift_ricochetShoot" )
 	modApi:addAbilityDef( "qed_grift_shootDevice", scriptPath .. "/abilities/qed_grift_shootDevice" )
 	modApi:addAbilityDef( "qed_grift_switchWeaponMode", scriptPath .. "/abilities/qed_grift_switchWeaponMode" )
 
