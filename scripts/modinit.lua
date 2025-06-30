@@ -5,6 +5,14 @@ local function earlyInit( modApi )
 	}
 end
 
+local function findModByName(name)
+    for i, modData in ipairs(mod_manager.mods) do
+        if name and modData.name == name then
+            return modData
+        end
+    end
+end
+
 local function init( modApi )
 	local scriptPath = modApi:getScriptPath()
 	-- Store script path for cross-file includes
@@ -46,6 +54,10 @@ local function load( modApi, options, params )
 	modApi:addAgentDef( "rook", mod_agentdefs.rook, { "rook", "rook_a" } )
 	modApi:addAgentDef( "rook_a", mod_agentdefs.rook_a )
 	-- modApi::addRescueAgent()
+
+    if not findModByName("Extra Agent Abilities") then
+        modApi:insertUIElements(include(scriptPath .. "/screen_inserts_popUpActions"))
+    end
 end
 
 local function lateLoad( modApi, options, params )
